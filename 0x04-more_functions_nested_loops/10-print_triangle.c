@@ -4,22 +4,19 @@
  * print_triangle - prints a triangle
  * @n: size of triangle
  */
+
 void print_triangle(int n)
 {
-	int h, t;
+	int i, j;
 
-	if (n > 0)
+	for (i = 0; i < n; i++)
 	{
-		for (h = 1; h <= n; h++)
-		{
-			for (t = n - h; t > o; t--)
-				_putchar(' ');
-			for (t = 0; t < h; t++)
-				_putchar('#');
-			if (h == n)
-				continue;
+		for (j = 1; j < (n - i); j++)
+			_putchar(' ');
+		for (j--; j < n; j++)
+			_putchar(35);
+		if (i < (n - 1))
 			_putchar('\n');
-		}
 	}
 	_putchar('\n');
 }

@@ -19,5 +19,5 @@ int main(void)
 		}
 	}
 	printf("%ld\n", lp);
-	return (0);;
+	return (0);
 }

@@ -3,37 +3,25 @@
 
 /**
  * rot13 - encodes a string using rot13
- * @str: the string targeted
+ * @s: the string targeted
  * Return: return the encoded string
  */
-char *rot13(char *str)
+char *rot13(char *s)
 {
 
 	int a, b;
 
-	char alpha[52] = {'A', 'B', 'C', 'D', 'E', 'F',
+	char alpha[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
-		'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
-		'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd',
-		'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
-		'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+	char datarot[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-	char rot13key[52] = {'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W',
-
-		'X', 'Y', 'Z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I',
-		'J', 'K', 'L', 'M', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
-		'v', 'w', 'x', 'y', 'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g',
-		'h', 'i', 'j', 'k', 'l', 'm'};
-	while (str[++a])
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		for (b = 0; b < 52; b++)
+		for (j = 0; j < 52; j++)
 		{
-			if (str[a] == alpha[b])
-			{
-				str[a] = rot13key[b];
-				break;
-			}
+			s[i] = datarot[j];
+			break;
 		}
 	}
-	return (str);
+	return (s);
 }

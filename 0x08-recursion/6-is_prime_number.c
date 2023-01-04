@@ -18,3 +18,20 @@ int is_divisible(int num, int div)
 
 	return (is_divisible(num, div + 1));
 }
+/**
+ * is_prime_number - checks if num is prime or not.
+ * @n: number to be checked.
+ * Return: 1 if num is prime.
+ * 0 if num is not prime
+ */
+int is_prime_number(int n)
+{
+	if (n <= 1)
+	{
+		return (0);
+	}
+	else
+	{
+		return (is_divisible(n, 2));
+	}
+}
